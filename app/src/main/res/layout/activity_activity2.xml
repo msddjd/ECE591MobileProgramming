@@ -15,11 +15,16 @@
         android:layout_width="fill_parent"
         android:inputType="text" />
 
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/idNumbPrmpt"/>
+
     <EditText
         android:id="@+id/idNumbInp"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
-        android:inputType="number"/>
+        android:inputType="phone"/>
 
     <Button
         android:layout_width="wrap_content"

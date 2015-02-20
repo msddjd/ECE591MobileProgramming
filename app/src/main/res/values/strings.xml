@@ -9,7 +9,8 @@
     <string name="btnClick_txt">Click Here</string>
     <string name="title_activity_activity2">Second Activity</string>
     <string name="usrNamePrmpt">Your username here</string>
-    <string name="idNumberPrmpt">Enter Your Number Here</string>
+    <string name="idNumbPrmpt">Please Enter Your Number</string>
+    <string name="idNumbTxt">123-4567</string>
     <string name="btnOK_txt">OK</string>
 
     <string name="data_txt">Username/Number = </string>

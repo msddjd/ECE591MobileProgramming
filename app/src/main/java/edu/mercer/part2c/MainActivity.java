@@ -35,7 +35,7 @@ public class MainActivity extends ActionBarActivity {
             Bundle a2promptsBndl = new Bundle();
 
             String usr_name_prmpt = getResources().getString(R.string.usrNamePrmpt);
-            String id_numb_prmpt = getResources().getString(R.string.idNumberPrmpt);
+            String id_numb_prmpt = getResources().getString(R.string.idNumbTxt);
 
             a2promptsBndl.putString("userNameKey",usr_name_prmpt);
             a2promptsBndl.putString("idNumbKey",id_numb_prmpt);
@@ -51,21 +51,24 @@ public class MainActivity extends ActionBarActivity {
 
       public void onActivityResult(int rcvdRsltId, int rcvdRsltCode, Intent rcvdData) {
 
-        if   (rcvdRsltId ==   myActivity2_id   ) {
+          if ( (rcvdRsltId == myActivity2_id)&&(rcvdRsltCode==RESULT_OK) ) {
+              Bundle bndlFromAct2 = rcvdData.getExtras();
 
-            if (rcvdRsltCode == RESULT_OK)    {
+              if (bndlFromAct2 != null) {
+                  String entered_name = bndlFromAct2.getString("enteredName");
+                  String entered_id = bndlFromAct2.getString("enteredID");
 
-                String toastMsg = getResources().getString(R.string.data_txt) +
-                                  rcvdData.getData().toString() ;
+                  String toastMsg = getResources().getString(R.string.data_txt)
+                          + " " + entered_name + "/" + entered_id;
 
-                // Note: data_txt = "Data Received = ", and
-                // this is defined in the strings.xml file
 
-                Toast.makeText(this,  toastMsg ,
-                        Toast.LENGTH_SHORT).show();
-            }
+                  // Note: data_txt = "Data Received = ", and
+                  // this is defined in the strings.xml file
 
-        }
+                  Toast.makeText(this, toastMsg,
+                          Toast.LENGTH_SHORT).show();
+              }
+          }
 
       }  // end of onActivityResult(...)
 
